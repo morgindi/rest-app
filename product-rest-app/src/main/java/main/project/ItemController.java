@@ -58,7 +58,7 @@ public class ItemController {
 			if (itemAdded != null) {
 				return new ResponseEntity<>(itemAdded, HttpStatus.CREATED);
 			}
-			return new ResponseEntity<>(new Error("The " + item.getName() +" is exists, please try again"),  HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(new Error("The " + item.getName() +" already exists"),  HttpStatus.BAD_REQUEST);
 		} 
 		catch (Exception e) {
 			return new ResponseEntity<>(new Error(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
